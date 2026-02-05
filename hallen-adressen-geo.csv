@@ -1,30 +1,30 @@
-club_id;club_name;city;street;latitude;longitude;color;region
+ï»¿club_id;club_name;city;street;latitude;longitude;color;region
 S1;SV Fortuna Regensburg;93057 Regensburg;Isarstr. 24;49.0323215;12.1184603;red;S
-S2;TSV Neuhausen-Nymphenburg II;80638 München;Stievestr. 15;48.1603583;11.5131331;red;S
+S2;TSV Neuhausen-Nymphenburg II;80638 MÃ¼nchen;Stievestr. 15;48.1603583;11.5131331;red;S
 S3;TSV Diedorf;86420 Diedorf;Rathausplatz 9;48.3545106;10.7847673;red;S
-S4;TV Dillingen;89407 Dillingen a. d. Donau;Ziegelstraße 10;48.5783859;10.4864254;red;S
-S5;HSG DHfK Leipzig;04279 Leipzig;Raschwitzer-Straße 16;51.2937299;12.3802070;red;S
-S6;TSV Niederwürschnitz;09399 Niederwürschnitz;Schulweg 2;50.7222443;12.7537688;red;S
+S4;TV Dillingen;89407 Dillingen a. d. Donau;ZiegelstraÃŸe 10;48.5783859;10.4864254;red;S
+S5;HSG DHfK Leipzig;04279 Leipzig;Raschwitzer-StraÃŸe 16;51.2937299;12.3802070;red;S
+S6;TSV NiederwÃ¼rschnitz;09399 NiederwÃ¼rschnitz;Schulweg 2;50.7222443;12.7537688;red;S
 S7;SG Schorndorf II;73614 Schorndorf;Schlichtener Str. 37;48.8025617;9.5267370;red;S
-S8;SV Lohhof;85716 Unterschleißheim;Hans-Carossa-Straße 2;48.2787568;11.5671968;red;S
+S8;SV Lohhof;85716 UnterschleiÃŸheim;Hans-Carossa-StraÃŸe 2;48.2787568;11.5671968;red;S
 M1;BC Remagen [A];53424 Remagen;Goethestr. 25;50.5764325;7.2451071;yellow;M
-M2;1. BC Sbr.-Bischmisheim 3;66123 Saarbrücken;Hermann-Neuberger-Str. 7;49.2510052;7.0338635;yellow;M
-M3;PSV Saar;66121 Saarbrücken;Halbergstr. 84-86;49.2322015;7.0071049;yellow;M
-M4;TV Mainz-Zahlbach;55128 Mainz;Mühlweg 92;49.9855853;8.2538192;yellow;M
-M5;TuS Schwanheim;60529 Frankfurt;Saarbrücker Str. 4;50.0830786;8.5800923;yellow;M
-M6;SV GutsMuths Jena 2;07749 Jena;Wöllnitzer Str. 40;50.9158665;11.5897637;yellow;M
+M2;1. BC Sbr.-Bischmisheim 3;66123 SaarbrÃ¼cken;Hermann-Neuberger-Str. 7;49.2510052;7.0338635;yellow;M
+M3;PSV Saar;66121 SaarbrÃ¼cken;Halbergstr. 84-86;49.2322015;7.0071049;yellow;M
+M4;TV Mainz-Zahlbach;55128 Mainz;MÃ¼hlweg 92;49.9855853;8.2538192;yellow;M
+M5;TuS Schwanheim;60529 Frankfurt;SaarbrÃ¼cker Str. 4;50.0830786;8.5800923;yellow;M
+M6;SV GutsMuths Jena 2;07749 Jena;WÃ¶llnitzer Str. 40;50.9158665;11.5897637;yellow;M
 M7;SV Fun-Ball Dortelweil 3;61118 Bad Vilbel;Theodor-Heuss-Str. 65;50.2116138;8.7448445;yellow;M
 M8;TB Andernach [N];56626 Andernach;Beethovenstr. 16;50.4310387;7.4054510;yellow;M
-W1;1. BV Mülheim 2;45468 Mülheim/Ruhr;Ludwig-Wolker-Str. 35;51.4191525;6.8835660;green;W
+W1;1. BV MÃ¼lheim 2;45468 MÃ¼lheim/Ruhr;Ludwig-Wolker-Str. 35;51.4191525;6.8835660;green;W
 W2;BC Hohenlimburg 1;58119 Hagen-Hohenlimburg;Wiesenstr. 1;51.3610621;7.5677568;green;W
 W3;BV RW Wesel 1;46485 Wesel;An de Tent 11;51.6518410;6.6334204;green;W
 W4;TV Refrath 3;51427 Bergisch Gladbach;Steinbreche 1;50.9589073;7.1129257;green;W
-W5;1. CfB Köln 1;50676 Köln;Severinstr. 235/245;50.9280470;6.9575996;green;W
+W5;1. CfB KÃ¶ln 1;50676 KÃ¶ln;Severinstr. 235/245;50.9280470;6.9575996;green;W
 W6;Gladbecker FC 2;45968 Gladbeck-Brauck;Kortenkamp 19;51.5438071;7.0143053;green;W
 W7;1. BC Beuel 2;53225 Bonn-Beuel;Limpericher Str. 141;50.7320943;7.1295391;green;W
-W8;1. BC Wipperfeld 3;51688 Wipperfürth;Am Mühlenberg 1;51.1165331;7.4059299;green;W
-N1;BC PreussenPark 09 [N];12207 Berlin;Lippstädter Str. 5;52.4131031;13.3029351;blue;N
-N2;Blau-Weiss Wittorf NMS 2;24534 Neumünster;Mozartstr. 36;54.0785197;9.9651642;blue;N
+W8;1. BC Wipperfeld 3;51688 WipperfÃ¼rth;Am MÃ¼hlenberg 1;51.1165331;7.4059299;green;W
+N1;BC PreussenPark 09 [N];12207 Berlin;LippstÃ¤dter Str. 5;52.4131031;13.3029351;blue;N
+N2;Blau-Weiss Wittorf NMS 2;24534 NeumÃ¼nster;Mozartstr. 36;54.0785197;9.9651642;blue;N
 N3;SG VfB/SC Peine;31226 Peine;Pelikanstr. 12;52.3365259;10.1893666;blue;N
 N4;TSV Trittau [N] 2;22946 Trittau;Heinrich-Hertz-Str. 7;53.6182107;10.3959510;blue;N
 N5;SG Lengede/Vechelde;38268 Lengede;Fuhsestr. 10;52.2013656;10.2812443;blue;N
