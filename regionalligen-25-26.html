@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base target="_top">
+	<meta charset="utf-8-sig">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>DBV-Regionalligen - Saison 2025/2026</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin-left: 10px;
+		}
+		.leaflet-container {
+			height: 600px;
+			width: 500px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	</style>
+</head>
+
+<body>
+<b style="font-size: large;">DBV-Regionalligen - Saison 2025/2026 (*)</b><br />
+<div style="font-size: small;">(*) reduziert ggf. um Tabellenletze auf 
+je 8 Mannschaften</div>
+<div id='map'></div>
+<div style="font-size: small;">Hinweis: Marker anklicken liefert Name 
+der Mannschaften</div>
+&copy; Edi Klein (03.02.2026)
+
+<script>
+// Erstelle ein benutzerdefiniertes Icon
+function createCustomIcon(color) {
+    return L.icon({
+        iconUrl: './images/poi-icon-' + color + '_33x50.png', // Pfad zum Icon basierend auf der Farbe
+        iconSize: [20, 32], // Größe des Icons
+        iconAnchor: [16.5, 50], // Ankerpunkt
+        popupAnchor: [0, -50] // Position des Popups
+    });
+}
+
+// Funktion zum Laden der CSV-Datei und Erstellen von Markern in einer LayerGroup
+async function loadMarkers(read_from_stream) {
+    let response;
+	let data;
+	
+	if (read_from_stream) {
+		response = await fetch('./fetch_geocoordinates.php');
+	} else {
+		response = await fetch('./hallen-adressen-geo.csv');
+	}
+
+	if (response.ok) {
+		data = await response.text(); // CSV-Daten als Text lesen
+		console.log(data);
+	} else {
+		console.error('Fehler beim Abrufen der CSV-Daten:', response.statusText);
+	}
+	
+    const rows = data.split('\n').slice(1); // Erste Zeile ignorieren (Header)
+
+    rows.forEach(row => {
+        const cols = row.split(';');
+		const club_name = cols[1];
+		const city = cols[2];
+		const street = cols[3];
+        const latitude = parseFloat(cols[4]);
+        const longitude = parseFloat(cols[5]);
+		const color = cols[6];
+		const region = cols[7][0];
+		
+		// Überprüfen, ob Zeile leer ist
+		if (row === '') {
+			return; // Beendet die aktuelle Iteration, überspringt den Rest des Codes in dieser Iteration
+		}
+	
+		let popupText = club_name + "<br />" + city + ", " + street;
+		
+        // Marker erstellen
+        const marker = L.marker([latitude, longitude], { icon: createCustomIcon(color) });
+
+        // Popup binden
+        marker.bindPopup(popupText);
+
+        // Marker zur LayerGroup hinzufügen
+		if (overlayMaps[region]) {
+			marker.addTo(overlayMaps[region]);
+		}
+
+    });
+}
+
+// Erstelle eine LayerGroup
+const S_region = L.layerGroup();
+const M_region = L.layerGroup();
+const W_region = L.layerGroup();
+const N_region = L.layerGroup();
+
+// erhält die Daten wahlweise von csv Datei (= false), oder als Rückgabewert von einer php Datei
+const read_from_stream = false;
+// Marker beim Laden der Seite hinzufügen
+window.onload = loadMarkers(read_from_stream);
+
+const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+
+const map = L.map('map', {
+	center: [51.52, 9.95],
+	zoom: 6,
+	layers: [osm, S_region, M_region, W_region, N_region]
+});
+
+// Erstelle Layer Control
+var overlayMaps = {
+    "S": S_region,
+	"M": M_region,
+	"W": W_region,
+	"N": N_region
+};
+
+L.control.layers(null, overlayMaps, { collapsed: false }).addTo(map);
+
+</script>
+
+</body>
+</html>
